@@ -30,10 +30,10 @@ class BuildingsController(Processor):
         return True
         
     def construct_new_building(self, blueprint: Type[Building]) -> None:
-        self.ge.buildings.add(blueprint())
+        self.ge.add_building(blueprint())
         
     def demolition_availability_check(self, event: Demolition) -> bool:
         return True
         
     def demolish_building(self, building: Building) -> None:
-        self.ge.buildings.remove(building)
+        self.ge.remove_building(building)
